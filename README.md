@@ -4,6 +4,19 @@ Forked from https://github.com/adafruit/Ethernet2 but with minor edits to ensure
 
 ***Note: Tested ONLY on ESP32.***
 
+## ESP32 SPI Pin Configuration
+
+This library uses the HSPI interface on ESP32. Connect your W5500 module as follows:
+
+| W5500 Signal | ESP32 GPIO | HSPI Function |
+|--------------|------------|---------------|
+| MISO         | GPIO 12    | HSPI_MISO     |
+| MOSI         | GPIO 13    | HSPI_MOSI     |
+| SCLK         | GPIO 14    | HSPI_SCLK     |
+| CS (SS)      | GPIO 15    | HSPI_SS       |
+
+These pins are defined in `src/utility/w5500.h` and are used by default when initializing the Ethernet connection.
+
 License
 -------
 
